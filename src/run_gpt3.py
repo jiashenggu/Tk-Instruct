@@ -1,9 +1,9 @@
-from base64 import encode
 import glob
 import json
 import openai
 import tqdm
 import os
+import random
 from transformers import HfArgumentParser, GPT2TokenizerFast
 from run_s2s import DataTrainingArguments
 from datasets import load_dataset
@@ -33,6 +33,7 @@ class GPT3Arguments(DataTrainingArguments):
 
 
 if __name__ == "__main__":
+    random.seed(123)
     parser = HfArgumentParser((GPT3Arguments,))
     args, = parser.parse_args_into_dataclasses()
     raw_datasets = load_dataset(
@@ -63,15 +64,14 @@ if __name__ == "__main__":
         json.dump(args.__dict__, fout)
 
     existing_requests = {}
-    if os.path.exists(os.path.join(args.output_dir, "gpt3_predictions.json")):
-        
-        with open(os.path.join(args.output_dir, "gpt3_predictions.json")) as fin:
+    if os.path.exists(os.path.join(args.output_dir, "predicted_examples.jsonl")):
+        with open(os.path.join(args.output_dir, "predicted_examples.jsonl")) as fin:
             for line in fin:
                 request_info = json.loads(line)
                 existing_requests[request_info["gpt3_input"]] = request_info["gpt3_response"]
 
-    with open(os.path.join(args.output_dir, "gpt3_predictions.json"), "w") as fout:
-        for example in tqdm.tqdm(raw_datasets["validation"]):
+    with open(os.path.join(args.output_dir, "predicted_examples.jsonl"), "w") as fout:
+        for example in tqdm.tqdm(raw_datasets["test"]):
             encoded_example = data_collator([example])
             example["gpt3_input"] = encoded_example["inputs"][0].strip()
             example["gpt3_target"] = encoded_example["labels"][0].strip()
@@ -88,6 +88,9 @@ if __name__ == "__main__":
                     presence_penalty=0
                 )
             example["gpt3_response"] = response
+            # Note: we cut the generated text at the first period, since the GPT3 language model sometimes generates more than one sentences.
+            # Our results show that this won't affect the instruct-GPT3 model very much, but will significantly improve the original GPT3 LM.
+            example["prediction"] = example["gpt3_response"]["choices"][0]["text"].strip().split(".")[0]
             fout.write(json.dumps(example) + "\n")
 
         

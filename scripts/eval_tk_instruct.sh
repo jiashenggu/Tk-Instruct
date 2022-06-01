@@ -7,11 +7,13 @@ export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1
 export CUDA_VISIBLE_DEVICES=2
 
+
 # run_s2s_crud, output_english_insert, eval_english_insert.out
 
 nohup python src/run_s2s_crud.py \
     --do_eval \
     --predict_with_generate \
+    --evaluation_strategy "no" \
     --model_name_or_path allenai/tk-instruct-3b-def-pos \
     --max_source_length 1024 \
     --max_target_length 128 \

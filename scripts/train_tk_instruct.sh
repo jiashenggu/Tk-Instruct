@@ -11,9 +11,6 @@ port=$(shuf -i25000-30000 -n1)
 accelerate launch src/run_s2s_curd.py \
     --do_predict \
     --predict_with_generate \
-    --metric_for_best_model rougeL \
-    --greater_is_better True \
-    --denser_evaluation True \
     --model_name_or_path google/t5-xl-lm-adapt \
     --max_source_length 1024 \
     --max_target_length 128 \
@@ -41,8 +38,7 @@ accelerate launch src/run_s2s_curd.py \
     --warmup_steps 0 \
     --logging_strategy steps \
     --logging_steps 500 \
-    --evaluation_strategy steps \
-    --eval_steps 500 \
+    --evaluation_strategy no \
     --save_strategy steps \
     --save_steps 2500 \
     --bf16 \
