@@ -2,14 +2,13 @@
 set -x
 
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
-export TRANSFORMERS_CACHE=/home/yizhongw/.cache/huggingface
-export WANDB_DISABLED="true"
-
+# export TRANSFORMERS_CACHE=/home/gujiashe/.cache/huggingface
+# export WANDB_DISABLED="true"
+export CUDA_LAUNCH_BLOCKING=1
+export NCCL_P2P_DISABLE=1
 port=$(shuf -i25000-30000 -n1)
 
-deepspeed --master_port $port src/run_s2s.py \
-    --do_train \
-    --do_eval \
+accelerate launch src/run_s2s_curd.py \
     --do_predict \
     --predict_with_generate \
     --metric_for_best_model rougeL \
@@ -46,8 +45,7 @@ deepspeed --master_port $port src/run_s2s.py \
     --eval_steps 500 \
     --save_strategy steps \
     --save_steps 2500 \
-    --deepspeed ds_configs/stage2.config \
     --bf16 \
-    --disable_tqdm True \
+    --disable_tqdm False \
     --report_to wandb \
     --run_name t5-experiment
