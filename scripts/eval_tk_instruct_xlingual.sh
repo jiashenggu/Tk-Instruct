@@ -5,13 +5,15 @@ export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 # export TRANSFORMERS_CACHE=/home/yizhongw/.cache/huggingface
 export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1
-export CUDA_VISIBLE_DEVICES=3
+export CUDA_VISIBLE_DEVICES=4
+export EXP_NAME=shuffle_sentences_1
 
 # run_s2s_crud, output_xlingual_insert, eval_xlingual_insert.out
 
 nohup python src/run_s2s_crud.py \
     --do_eval \
     --predict_with_generate \
+    --evaluation_strategy "no" \
     --model_name_or_path allenai/mtk-instruct-3b-def-pos \
     --max_source_length 1024 \
     --max_target_length 128 \
@@ -26,9 +28,9 @@ nohup python src/run_s2s_crud.py \
     --tk_instruct False \
     --data_dir data/splits/xlingual \
     --task_dir data/tasks \
-    --output_dir output_xlingual_insert_5_1/ \
+    --output_dir output_xlingual \
     --overwrite_output_dir \
     --cache_dir ./cache/ \
     --overwrite_cache \
     --per_device_eval_batch_size 4 \
-    > eval_xlingual_insert_5_1.out 2>&1 &
+    > eval_out/eval_xlingual.out 2>&1 &
