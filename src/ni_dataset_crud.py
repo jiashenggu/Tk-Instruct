@@ -160,18 +160,19 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                         task_data.pop("Instruction Source")
                     Definition = task_data['Definition'][0]
 
-                    # Definition_crud = crud.delete_ratio(Definition, ratio=0.1)
+                    Definition_crud = crud.delete_stopwords(Definition)
                     # Definition_crud = crud.delete_num(Definition, 5)
                     # Definition_crud = crud.delete_stopwords(Definition)
                     # Definition_crud = crud.insert_mask(Definition, num_mask=10)
-                    # Definition_crud = crud.repeat_sentences(Definition, index = None)
+                    # Definition_crud = crud.repeat_sentences(Definition, index = -1)
                     # Definition_crud = crud.replace_num(Definition, num_mask=10)
                     # Definition_crud = crud.shuffle_sentences(Definition)
+                    # Definition_crud = Definition
 
                     print("Definition_native: ", Definition)
-                    # print("Definition_change: ", Definition_crud)
+                    print("Definition_change: ", Definition_crud)
 
-                    # task_data['Definition'][0] = Definition_crud
+                    task_data['Definition'][0] = Definition_crud
 
                     all_instances = task_data.pop("Instances")
                     if subset == "test":

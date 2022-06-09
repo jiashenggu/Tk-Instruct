@@ -1,8 +1,8 @@
 ,title_generation,eval_rougeL
-xlingual,6.8095,50.613
-xlingual_repeat_first,9.4238,52.4849
-xlingual_repeat_last,9.4238,52.4849
-xlingual_stopword,6.8714,51.6548
+xlingual_repeat_first_sentences,9.419,51.9704
+xlingual_repeat_last_sentences,8.4357,51.2936
+xlingual,0.6920806359570153,0.4644978459464458
+xlingual_stopword,0.8038399191104877,0.12108868191903309
 xlingual_delete_5,2.3790626870448133,0.4314724891448921
 xlingual_delete_10,0.12719240892792655,0.4986665574866192
 xlingual_insert_5,2.3660377234712233,0.3584575877593089

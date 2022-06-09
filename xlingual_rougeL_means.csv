@@ -1,8 +1,8 @@
 ,title_generation,eval_rougeL
-xlingual,6.8095,50.613
-xlingual_repeat_first,9.4238,52.4849
-xlingual_repeat_last,9.4238,52.4849
-xlingual_stopword,6.8714,51.6548
+xlingual_repeat_first_sentences,9.419,51.9704
+xlingual_repeat_last_sentences,8.4357,51.2936
+xlingual,8.8359,52.07706666666667
+xlingual_stopword,6.286666666666666,52.16673333333333
 xlingual_delete_5,8.503633333333333,52.575066666666665
 xlingual_delete_10,8.353933333333332,52.41853333333333
 xlingual_insert_5,7.795533333333334,52.11696666666666
