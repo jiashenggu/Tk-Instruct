@@ -2,6 +2,7 @@ cache
 output*
 *.out
 wandb
+induction_data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
