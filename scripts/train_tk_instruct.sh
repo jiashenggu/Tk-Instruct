@@ -8,7 +8,7 @@ export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1
 port=$(shuf -i25000-30000 -n1)
 
-accelerate launch src/run_s2s_curd.py \
+accelerate launch src/run_s2s_crud.py \
     --do_predict \
     --predict_with_generate \
     --model_name_or_path google/t5-xl-lm-adapt \
