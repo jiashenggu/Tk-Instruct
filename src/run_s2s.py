@@ -312,9 +312,10 @@ def main():
         "src/ni_dataset.py", 
         data_dir=data_args.data_dir, 
         task_dir=data_args.task_dir, 
-        cache_dir=model_args.cache_dir,
+        # cache_dir=model_args.cache_dir,
         max_num_instances_per_task=data_args.max_num_instances_per_task,
-        max_num_instances_per_eval_task=data_args.max_num_instances_per_eval_task
+        max_num_instances_per_eval_task=data_args.max_num_instances_per_eval_task,
+        download_mode="force_redownload"
     )
 
     # Load pretrained model and tokenizer

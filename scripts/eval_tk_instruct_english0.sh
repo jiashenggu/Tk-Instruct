@@ -2,11 +2,14 @@
 set -x
 
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
-
+# export TRANSFORMERS_CACHE=/home/yizhongw/.cache/huggingface
+export CUDA_LAUNCH_BLOCKING=1
+export NCCL_P2P_DISABLE=1
 export CUDA_VISIBLE_DEVICES=0
+export EXP_NAME=original_instruction
 
 nohup python src/run_s2s.py \
-    --do_predict \
+    --do_eval \
     --predict_with_generate \
     --evaluation_strategy "no" \
     --model_name_or_path allenai/tk-instruct-3b-def-pos \
@@ -23,9 +26,10 @@ nohup python src/run_s2s.py \
     --tk_instruct False \
     --data_dir data/splits/default \
     --task_dir data/tasks \
-    --output_dir output_english0/ \
+    --output_dir tk_outputs/output_english_$EXP_NAME \
     --overwrite_output_dir \
     --cache_dir ./cache/ \
     --overwrite_cache \
     --per_device_eval_batch_size 4 \
-    > eval_out/eval_english0.out 2>&1 &
+    > tk_eval_log/eval_english_$EXP_NAME.out 2>&1 &
+

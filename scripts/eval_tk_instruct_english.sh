@@ -6,7 +6,7 @@ export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1
 export CUDA_VISIBLE_DEVICES=0
-export EXP_NAME=stopword_1
+export EXP_NAME=new_instruction_1
 
 # run_s2s_crud, output_english_insert, eval_english_insert.out
 
