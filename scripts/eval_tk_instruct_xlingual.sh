@@ -5,8 +5,8 @@ export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 # export TRANSFORMERS_CACHE=/home/yizhongw/.cache/huggingface
 export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1
-export CUDA_VISIBLE_DEVICES=3
-export EXP_NAME=stopword_1
+export CUDA_VISIBLE_DEVICES=5
+export EXP_NAME=shuffle_words_3
 
 # run_s2s_crud, output_xlingual_insert, eval_xlingual_insert.out
 
@@ -28,9 +28,9 @@ nohup python src/run_s2s_crud.py \
     --tk_instruct False \
     --data_dir data/splits/xlingual \
     --task_dir data/tasks \
-    --output_dir output_xlingual_$EXP_NAME \
+    --output_dir tk_outputs/output_xlingual_$EXP_NAME \
     --overwrite_output_dir \
     --cache_dir ./cache/ \
     --overwrite_cache \
     --per_device_eval_batch_size 4 \
-    > eval_out/eval_xlingual_$EXP_NAME.out 2>&1 &
+    > tk_eval_log/eval_xlingual_$EXP_NAME.out 2>&1 &

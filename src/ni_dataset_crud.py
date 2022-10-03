@@ -19,6 +19,7 @@
 
 import json
 import os
+from posixpath import split
 import random
 import datasets
 import spacy
@@ -150,48 +151,58 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
         """Yields examples."""
         logger.info(f"Generating tasks from = {path}")
         crud = DataAugmentation()
-        with open(path, encoding="utf-8") as split_f:
-            for line in split_f:
-                task_name = line.strip()
-                task_path = os.path.join(task_dir, task_name + ".json")
-                with open(task_path, encoding="utf-8") as task_f:
-                    s = task_f.read()
-                    task_data = json.loads(s)
-                    task_data["Task"] = task_name
-                    if "Instruction Source" in task_data:
-                        task_data.pop("Instruction Source")
-                    Definition = task_data['Definition'][0]
+        # with open(path, encoding="utf-8") as split_f:
+        split_f = open(path, encoding="utf-8").readlines()
 
-                    Definition_crud = crud.delete_stopwords(Definition)
-                    # Definition_crud = crud.delete_num(Definition, 5)
-                    # Definition_crud = crud.delete_stopwords(Definition)
-                    # Definition_crud = crud.insert_mask(Definition, num_mask=10)
-                    # Definition_crud = crud.repeat_sentences(Definition, index = -1)
-                    # Definition_crud = crud.replace_num(Definition, num_mask=10)
-                    # Definition_crud = crud.shuffle_sentences(Definition)
-                    # Definition_crud = Definition
+        for task_id, line in enumerate(split_f):
+            task_name = line.strip()
+            task_path = os.path.join(task_dir, task_name + ".json")
+            task_name_other = split_f[(task_id+1)%len(split_f)].strip()
+            task_path_other = os.path.join(task_dir, task_name_other + ".json")
+            with open(task_path, encoding="utf-8") as task_f:
+                s = task_f.read()
+                task_data = json.loads(s)
+                task_data["Task"] = task_name
+                if "Instruction Source" in task_data:
+                    task_data.pop("Instruction Source")
+                f_other = open(task_path_other, encoding="utf-8").read()
+                task_data_other = json.loads(f_other)
 
-                    print("Definition_native: ", Definition)
-                    print("Definition_change: ", Definition_crud)
+                Definition = task_data["Definition"][0]
+                # Definition_crud = task_data_other['Definition'][0]
+                
+                # Definition_crud = crud.delete_words(Definition, 5)
+                # Definition_crud = crud.delete_stopwords(Definition)
+                # Definition_crud = crud.insert_words(Definition, num_mask=10)
+                # Definition_crud = crud.replace_words(Definition, num_mask=10)
+                # Definition_crud = crud.shuffle_words(Definition)
+                # Definition_crud = crud.repeat_sentences(Definition, index = -1)
+                # Definition_crud = crud.shuffle_sentences(Definition)
+                
+                Definition_crud = Definition
 
-                    task_data['Definition'][0] = Definition_crud
 
-                    all_instances = task_data.pop("Instances")
-                    if subset == "test":
-                        # for testing tasks, 100 instances are selected for efficient evaluation and they are label-balanced.
-                        # we put them in the first for reproducibility.
-                        # so, we use them here
-                        instances = all_instances[:100]
-                    else:
-                        instances = all_instances
-                    if max_num_instances_per_task is not None and max_num_instances_per_task >= 0:
-                        random.shuffle(instances)
-                        instances = instances[:max_num_instances_per_task]
-                    for idx, instance in enumerate(instances):
-                        example = task_data.copy()
-                        example["id"] = instance["id"]
-                        example["Instance"] = instance
-                        yield f"{task_name}_{idx}", example
+                print("Definition_native: ", Definition)
+                print("Definition_change: ", Definition_crud)
+
+                task_data['Definition'][0] = Definition_crud
+
+                all_instances = task_data.pop("Instances")
+                if subset == "test":
+                    # for testing tasks, 100 instances are selected for efficient evaluation and they are label-balanced.
+                    # we put them in the first for reproducibility.
+                    # so, we use them here
+                    instances = all_instances[:100]
+                else:
+                    instances = all_instances
+                if max_num_instances_per_task is not None and max_num_instances_per_task >= 0:
+                    random.shuffle(instances)
+                    instances = instances[:max_num_instances_per_task]
+                for idx, instance in enumerate(instances):
+                    example = task_data.copy()
+                    example["id"] = instance["id"]
+                    example["Instance"] = instance
+                    yield f"{task_name}_{idx}", example
 
 class DataAugmentation:
     def __init__(self):
@@ -200,7 +211,7 @@ class DataAugmentation:
         self.en = spacy.load('en_core_web_sm')
         
 
-    def delete_num(self, Definition, num=5):
+    def delete_words(self, Definition, num=5):
 
         splited_definition = Definition.split()
         index = [i for i in range(len(splited_definition))]
@@ -208,6 +219,7 @@ class DataAugmentation:
         index.sort()
         Definition_crud = " ".join([splited_definition[i] for i in index])
         return Definition_crud
+        
     def delete_stopwords(self, Definition):
 
         #loading the english language small model of spacy
@@ -220,7 +232,7 @@ class DataAugmentation:
         Definition_crud = " ".join(lst)     
         return Definition_crud
 
-    def insert_mask(self, Definition, num_mask=5):
+    def insert_words(self, Definition, num_mask=5):
 
         token_list = Definition.split()
 
@@ -268,23 +280,8 @@ class DataAugmentation:
                 final_tokens.append(token)
 
         return " ".join(final_tokens)
-        
-    def shuffle_sentences(self, Definition):
 
-        doc = self.en(Definition)
-        sents = list(map(str, doc.sents))
-        random.shuffle(sents)
-        return " ".join(sents)
-
-    def repeat_sentences(self, Definition, index = None):
-        doc = self.en(Definition)
-        sents = list(map(str, doc.sents))
-        if None == index:
-            index = random.randint(0, len(sents)-1)
-        sents = sents[:index] + [sents[index]] + sents[index:]
-        return " ".join(sents)
-
-    def replace_num(self, Definition, num_mask):
+    def replace_words(self, Definition, num_mask=5):
 
         inputs = self.tokenizer(Definition, return_tensors='pt')
         input_ids = inputs['input_ids'][0]
@@ -305,7 +302,6 @@ class DataAugmentation:
         predictions = outputs[0]
 
         _, sorted_idx = predictions[0].sort(dim=-1, descending=True)
-        
 
         for k in range(1):
             predicted_index = [sorted_idx[i, k].item() for i in range(0, len(predictions[0])-1)]
@@ -314,3 +310,25 @@ class DataAugmentation:
                     input_ids[x] = predicted_index[x]
 
         return self.tokenizer.decode(input_ids[1: -1])
+    
+    def shuffle_words(self, Definition):
+
+        token_list = Definition.split()
+        random.shuffle(token_list)
+        return " ".join(token_list)
+    
+    def shuffle_sentences(self, Definition):
+
+        doc = self.en(Definition)
+        sents = list(map(str, doc.sents))
+        random.shuffle(sents)
+        return " ".join(sents)
+
+    def repeat_sentences(self, Definition, index = None):
+        doc = self.en(Definition)
+        sents = list(map(str, doc.sents))
+        if None == index:
+            index = random.randint(0, len(sents)-1)
+        sents = sents[:index] + [sents[index]] + sents[index:]
+        return " ".join(sents)
+

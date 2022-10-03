@@ -23,9 +23,9 @@ nohup python src/run_s2s.py \
     --tk_instruct False \
     --data_dir data/splits/xlingual \
     --task_dir data/tasks \
-    --output_dir output_xlingual0/ \
+    --output_dir tk_outputs/output_xlingual0/ \
     --overwrite_output_dir \
     --cache_dir ./cache/ \
     --overwrite_cache \
     --per_device_eval_batch_size 4 \
-    > eval_out/eval_xlingual0.out 2>&1 &
+    > tk_eval_log/eval_xlingual0.out 2>&1 &
