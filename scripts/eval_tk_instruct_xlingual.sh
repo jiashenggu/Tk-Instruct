@@ -5,8 +5,8 @@ export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 # export TRANSFORMERS_CACHE=/home/yizhongw/.cache/huggingface
 export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1
-export CUDA_VISIBLE_DEVICES=5
-export EXP_NAME=shuffle_words_3
+export CUDA_VISIBLE_DEVICES=0
+export EXP_NAME=insert_10_words_4
 
 # run_s2s_crud, output_xlingual_insert, eval_xlingual_insert.out
 
@@ -33,4 +33,5 @@ nohup python src/run_s2s_crud.py \
     --cache_dir ./cache/ \
     --overwrite_cache \
     --per_device_eval_batch_size 4 \
+    --perturb_method insert_words \
     > tk_eval_log/eval_xlingual_$EXP_NAME.out 2>&1 &

@@ -149,7 +149,7 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                     s = task_f.read()
                     task_data = json.loads(s)
 
-                    task_data["Task"] = task_name
+                    task_data["Task"] = task_name.split('_')[:-1]
                     task_data["Contributors"] = 'instruction_induction'
                     task_data["Source"] = ['instruction_induction']
                     task_data["URL"] = ['instruction_induction']

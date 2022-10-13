@@ -230,7 +230,9 @@ class DataTrainingArguments:
         default=False,
         metadata={"help": "tk_instruct will train a model combining all valid instruction encodings. This will overwrite the other settings about instruction encoding."} 
     )
-    
+    perturb_method: Optional[str] = field(
+        default=None,
+    )
     def __post_init__(self):
         pass
 
@@ -315,6 +317,7 @@ def main():
         cache_dir=model_args.cache_dir,
         max_num_instances_per_task=data_args.max_num_instances_per_task,
         max_num_instances_per_eval_task=data_args.max_num_instances_per_eval_task,
+        perturb_method=data_args.perturb_method,
         download_mode = 'reuse_cache_if_exists'
     )
 

@@ -5,8 +5,8 @@ export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 # export TRANSFORMERS_CACHE=/home/yizhongw/.cache/huggingface
 export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1
-export CUDA_VISIBLE_DEVICES=0
-export EXP_NAME=original_instruction
+export CUDA_VISIBLE_DEVICES=2
+export EXP_NAME=original_instruction_3
 
 nohup python src/run_s2s.py \
     --do_eval \

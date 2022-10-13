@@ -50,11 +50,12 @@ through an iterative peer review process to ensure their quality.
 _URL = "https://instructions.apps.allenai.org/"
 
 class NIConfig(datasets.BuilderConfig):
-    def __init__(self, *args, task_dir=None, max_num_instances_per_task=None, max_num_instances_per_eval_task=None, **kwargs):
+    def __init__(self, *args, task_dir=None, max_num_instances_per_task=None, max_num_instances_per_eval_task=None, perturb_method=None, **kwargs):
         super().__init__(*args, **kwargs)
         self.task_dir: str = task_dir
         self.max_num_instances_per_task: int = max_num_instances_per_task
         self.max_num_instances_per_eval_task: int = max_num_instances_per_eval_task
+        self.perturb_method = perturb_method
 
 
 class NaturalInstructions(datasets.GeneratorBasedBuilder):
@@ -135,7 +136,8 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                     "path": os.path.join(split_dir, "dev_tasks.txt"), 
                     "task_dir": task_dir,
                     "max_num_instances_per_task": self.config.max_num_instances_per_eval_task,
-                    "subset": "dev"
+                    "subset": "dev",
+                    "perturb_method": self.config.perturb_method
                 }),
             datasets.SplitGenerator(
                 name=datasets.Split.TEST,
@@ -143,21 +145,22 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                     "path": os.path.join(split_dir, "test_tasks.txt"), 
                     "task_dir": task_dir, 
                     "max_num_instances_per_task": self.config.max_num_instances_per_eval_task,
-                    "subset": "test"
+                    "subset": "test",
                 }),
         ]
 
-    def _generate_examples(self, path=None, task_dir=None, max_num_instances_per_task=None, subset=None):
+    def _generate_examples(self, path=None, task_dir=None, max_num_instances_per_task=None, subset=None, perturb_method=None):
         """Yields examples."""
         logger.info(f"Generating tasks from = {path}")
         crud = DataAugmentation()
         # with open(path, encoding="utf-8") as split_f:
         split_f = open(path, encoding="utf-8").readlines()
-
+        task_ids_other = list(range(0, len(split_f)))
+        random.shuffle(task_ids_other)
         for task_id, line in enumerate(split_f):
             task_name = line.strip()
             task_path = os.path.join(task_dir, task_name + ".json")
-            task_name_other = split_f[(task_id+1)%len(split_f)].strip()
+            task_name_other = split_f[task_ids_other[task_id]].strip()
             task_path_other = os.path.join(task_dir, task_name_other + ".json")
             with open(task_path, encoding="utf-8") as task_f:
                 s = task_f.read()
@@ -169,17 +172,27 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                 task_data_other = json.loads(f_other)
 
                 Definition = task_data["Definition"][0]
-                # Definition_crud = task_data_other['Definition'][0]
                 
-                # Definition_crud = crud.delete_words(Definition, 5)
-                # Definition_crud = crud.delete_stopwords(Definition)
-                # Definition_crud = crud.insert_words(Definition, num_mask=10)
-                # Definition_crud = crud.replace_words(Definition, num_mask=10)
-                # Definition_crud = crud.shuffle_words(Definition)
-                # Definition_crud = crud.repeat_sentences(Definition, index = -1)
-                # Definition_crud = crud.shuffle_sentences(Definition)
+
+                if perturb_method == "delete_stopwords":
+                    Definition_crud = crud.delete_stopwords(Definition)
+                elif perturb_method == "delete_words":
+                    Definition_crud = crud.delete_words(Definition, 10)
+                elif perturb_method == "insert_words":
+                    Definition_crud = crud.insert_words(Definition, 10)
+                elif perturb_method == "replace_words":
+                    Definition_crud = crud.replace_words(Definition, 10)
+                elif perturb_method == "shuffle_words":
+                    Definition_crud = crud.shuffle_words(Definition)
+                elif perturb_method == "repeat_sentences":
+                    Definition_crud = crud.repeat_sentences(Definition)
+                elif perturb_method == "shuffle_sentences":
+                    Definition_crud = crud.shuffle_sentences(Definition)
+                elif perturb_method == "shuffle_instructions":
+                    Definition_crud = task_data_other['Definition'][0]
+                else:
+                    Definition_crud = Definition
                 
-                Definition_crud = Definition
 
 
                 print("Definition_native: ", Definition)
@@ -210,112 +223,114 @@ class DataAugmentation:
         self.model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
         self.en = spacy.load('en_core_web_sm')
         
+    @staticmethod
+    def connect_token_segments(tokens):
+        connected_tokens = []
+        for token in tokens:
+            if token.startswith("##"):
+                connected_tokens[-1] = connected_tokens[-1] + token[2:]
+            else:
+                connected_tokens.append(token)
+        return connected_tokens
+
 
     def delete_words(self, Definition, num=5):
 
-        splited_definition = Definition.split()
-        index = [i for i in range(len(splited_definition))]
-        index = random.sample(index, len(splited_definition)-num)
-        index.sort()
-        Definition_crud = " ".join([splited_definition[i] for i in index])
+        tokens = self.tokenizer.tokenize(Definition)
+        tokens = self.connect_token_segments(tokens)
+
+        index = [i for i in range(len(tokens))]
+
+        deleted_index = random.sample(index, num)
+        deleted_index = set(deleted_index)
+
+        deleted_tokens = [tokens[i] for i in index if i not in deleted_index]
+        Definition_crud = self.tokenizer.convert_tokens_to_string(deleted_tokens)
         return Definition_crud
         
     def delete_stopwords(self, Definition):
-
-        #loading the english language small model of spacy
         
+        tokens = self.tokenizer.tokenize(Definition)
+        tokens = self.connect_token_segments(tokens)
+
         stopwords = self.en.Defaults.stop_words
-        lst=[]
-        for token in Definition.split():
-            if token.lower() not in stopwords:    #checking whether the word is not 
-                lst.append(token)                    #present in the stopword list.
-        Definition_crud = " ".join(lst)     
+        deleted_tokens=[]
+        for token in tokens:
+            if token.lower() not in stopwords:
+                deleted_tokens.append(token)
+        Definition_crud =  self.tokenizer.convert_tokens_to_string(deleted_tokens)
         return Definition_crud
 
     def insert_words(self, Definition, num_mask=5):
 
-        token_list = Definition.split()
-
-
-        num = 0
-        while num < num_mask:
-            num += 1
-            insert_position = random.randint(1, len(token_list) - 1)
-            token_list.insert(insert_position, '[MASK]')
-    
-
-        input_txt = ' '.join(token_list)
-
-        inputs = self.tokenizer(input_txt, return_tensors='pt')
-
-        
-        input_ids = inputs['input_ids'][0].numpy()
-        if input_ids.shape[0]>512:
+        tokens = self.tokenizer.tokenize(Definition)
+        if len(tokens)>512:
             return Definition
-        outputs = self.model(**inputs)
-        predictions = outputs[0]
+        tokens = self.connect_token_segments(tokens)
 
-        _, sorted_idx = predictions[0].sort(dim=-1, descending=True)
-        
-        for k in range(1):
-            predicted_index = [sorted_idx[i, k].item() for i in range(0, len(predictions[0])-1)]
-            predicted_token = []
-            for x in range(1, len(predictions[0])-1):
-                if input_ids[x] == 103:
-                    predicted_token.append(self.tokenizer.convert_ids_to_tokens([predicted_index[x]])[0])
-        copy_token = predicted_token.copy()
-        token_list_copy = token_list.copy()
-        for i, token in enumerate(token_list):
-            if token == '[MASK]':
-                if len(predicted_token)==0:
-                    print(Definition)
-                    print(token_list_copy)
-                    print(copy_token)
-                token_list[i] = predicted_token.pop(0)
-        final_tokens = []
-        for token in token_list:
-            if token.startswith('##'):
-                final_tokens[-1] = final_tokens[-1] + token[2:]
-            else:
-                final_tokens.append(token)
-
-        return " ".join(final_tokens)
-
-    def replace_words(self, Definition, num_mask=5):
-
-        inputs = self.tokenizer(Definition, return_tensors='pt')
-        input_ids = inputs['input_ids'][0]
-
-        index = [i for i in range(len(input_ids))]
+        index = [i for i in range(len(tokens))]
 
         index = random.sample(index, num_mask)
 
-        index.sort()
         for i in index:
-            input_ids[i] = 103
+            tokens.insert(i, '[MASK]')
 
-
-        if len(input_ids)>512:
-            return Definition
-        inputs['input_ids'][0] = input_ids
+        
+        
+        Definition = self.tokenizer.convert_tokens_to_string(tokens)
+        inputs = self.tokenizer(Definition, return_tensors='pt')
+        input_ids = inputs['input_ids'][0]
         outputs = self.model(**inputs)
         predictions = outputs[0]
 
         _, sorted_idx = predictions[0].sort(dim=-1, descending=True)
 
-        for k in range(1):
-            predicted_index = [sorted_idx[i, k].item() for i in range(0, len(predictions[0])-1)]
-            for x in range(1, len(predictions[0])-1):
-                if input_ids[x] == 103:
-                    input_ids[x] = predicted_index[x]
+        predicted_index = [sorted_idx[i, 0].item() for i in range(0, len(predictions[0])-1)]
+        for x in range(1, len(predictions[0])-1):
+            if input_ids[x] == 103:
+                input_ids[x] = predicted_index[x]
 
-        return self.tokenizer.decode(input_ids[1: -1])
+        return self.tokenizer.decode(input_ids, skip_special_tokens=True)
+
+    def replace_words(self, Definition, num_mask=5):
+
+        tokens = self.tokenizer.tokenize(Definition)
+        if len(tokens)>512:
+            return Definition
+        tokens = self.connect_token_segments(tokens)
+
+        index = [i for i in range(len(tokens))]
+
+        index = random.sample(index, num_mask)
+
+        for i in index:
+            tokens[i] = '[MASK]'
+
+        if len(tokens)>512:
+            return Definition
+        
+        Definition = self.tokenizer.convert_tokens_to_string(tokens)
+        inputs = self.tokenizer(Definition, return_tensors='pt')
+        input_ids = inputs['input_ids'][0]
+        outputs = self.model(**inputs)
+        predictions = outputs[0]
+
+        _, sorted_idx = predictions[0].sort(dim=-1, descending=True)
+
+        predicted_index = [sorted_idx[i, 0].item() for i in range(0, len(predictions[0])-1)]
+        for x in range(1, len(predictions[0])-1):
+            if input_ids[x] == 103:
+                input_ids[x] = predicted_index[x]
+
+        return self.tokenizer.decode(input_ids, skip_special_tokens=True)
     
     def shuffle_words(self, Definition):
 
-        token_list = Definition.split()
-        random.shuffle(token_list)
-        return " ".join(token_list)
+        tokens = self.tokenizer.tokenize(Definition)
+        tokens = self.connect_token_segments(tokens)
+
+        random.shuffle(tokens)
+        return self.tokenizer.convert_tokens_to_string(tokens)
     
     def shuffle_sentences(self, Definition):
 
@@ -331,4 +346,3 @@ class DataAugmentation:
             index = random.randint(0, len(sents)-1)
         sents = sents[:index] + [sents[index]] + sents[index:]
         return " ".join(sents)
-
