@@ -305,14 +305,14 @@ def main():
             )
 
     # Set seed before initializing model.
-    set_seed(training_args.seed)
+    # set_seed(training_args.seed)
 
     # Get the NaturalInstructions dataset
     raw_datasets = load_dataset(
         "src/ni_dataset.py", 
         data_dir=data_args.data_dir, 
         task_dir=data_args.task_dir, 
-        # cache_dir=model_args.cache_dir,
+        cache_dir=model_args.cache_dir,
         max_num_instances_per_task=data_args.max_num_instances_per_task,
         max_num_instances_per_eval_task=data_args.max_num_instances_per_eval_task,
         download_mode="force_redownload"

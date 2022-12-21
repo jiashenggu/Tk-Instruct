@@ -128,8 +128,8 @@ class DataCollatorForNI:
                 else:
                     break 
             
-            # source = task_name + definition + "".join(pos_examples) + "".join(neg_examples) + task_input
-            source = definition + task_input
+            source = task_name + definition + "".join(pos_examples) + "".join(neg_examples) + task_input
+
             tokenized_source = self.tokenizer(source)["input_ids"]
             if len(tokenized_source) <= self.max_source_length:
                 sources.append(source)

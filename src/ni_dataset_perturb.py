@@ -152,7 +152,7 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
     def _generate_examples(self, path=None, task_dir=None, max_num_instances_per_task=None, subset=None, perturb_method=None):
         """Yields examples."""
         logger.info(f"Generating tasks from = {path}")
-        crud = DataAugmentation()
+        perturb = DataAugmentation()
         # with open(path, encoding="utf-8") as split_f:
         split_f = open(path, encoding="utf-8").readlines()
         task_ids_other = list(range(0, len(split_f)))
@@ -175,30 +175,30 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                 
 
                 if perturb_method == "delete_stopwords":
-                    Definition_crud = crud.delete_stopwords(Definition)
+                    Definition_perturb = perturb.delete_stopwords(Definition)
                 elif perturb_method == "delete_words":
-                    Definition_crud = crud.delete_words(Definition, 10)
+                    Definition_perturb = perturb.delete_words(Definition, 10)
                 elif perturb_method == "insert_words":
-                    Definition_crud = crud.insert_words(Definition, 10)
+                    Definition_perturb = perturb.insert_words(Definition, 10)
                 elif perturb_method == "replace_words":
-                    Definition_crud = crud.replace_words(Definition, 10)
+                    Definition_perturb = perturb.replace_words(Definition, 10)
                 elif perturb_method == "shuffle_words":
-                    Definition_crud = crud.shuffle_words(Definition)
+                    Definition_perturb = perturb.shuffle_words(Definition)
                 elif perturb_method == "repeat_sentences":
-                    Definition_crud = crud.repeat_sentences(Definition)
+                    Definition_perturb = perturb.repeat_sentences(Definition)
                 elif perturb_method == "shuffle_sentences":
-                    Definition_crud = crud.shuffle_sentences(Definition)
+                    Definition_perturb = perturb.shuffle_sentences(Definition)
                 elif perturb_method == "shuffle_instructions":
-                    Definition_crud = task_data_other['Definition'][0]
+                    Definition_perturb = task_data_other['Definition'][0]
                 else:
-                    Definition_crud = Definition
+                    Definition_perturb = Definition
                 
 
 
                 print("Definition_native: ", Definition)
-                print("Definition_change: ", Definition_crud)
+                print("Definition_change: ", Definition_perturb)
 
-                task_data['Definition'][0] = Definition_crud
+                task_data['Definition'][0] = Definition_perturb
 
                 all_instances = task_data.pop("Instances")
                 if subset == "test":
@@ -245,8 +245,8 @@ class DataAugmentation:
         deleted_index = set(deleted_index)
 
         deleted_tokens = [tokens[i] for i in index if i not in deleted_index]
-        Definition_crud = self.tokenizer.convert_tokens_to_string(deleted_tokens)
-        return Definition_crud
+        Definition_perturb = self.tokenizer.convert_tokens_to_string(deleted_tokens)
+        return Definition_perturb
         
     def delete_stopwords(self, Definition):
         
@@ -258,8 +258,8 @@ class DataAugmentation:
         for token in tokens:
             if token.lower() not in stopwords:
                 deleted_tokens.append(token)
-        Definition_crud =  self.tokenizer.convert_tokens_to_string(deleted_tokens)
-        return Definition_crud
+        Definition_perturb =  self.tokenizer.convert_tokens_to_string(deleted_tokens)
+        return Definition_perturb
 
     def insert_words(self, Definition, num_mask=5):
 

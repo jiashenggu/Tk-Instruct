@@ -307,7 +307,7 @@ def main():
             )
 
     # Set seed before initializing model.
-    # set_seed(training_args.seed)
+    set_seed(training_args.seed)
 
     # Get the NaturalInstructions dataset
     raw_datasets = load_dataset(

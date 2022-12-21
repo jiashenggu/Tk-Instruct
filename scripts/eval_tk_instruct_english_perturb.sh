@@ -5,12 +5,11 @@ export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 # export TRANSFORMERS_CACHE=/home/yizhongw/.cache/huggingface
 export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1
-export CUDA_VISIBLE_DEVICES=2
-export EXP_NAME=shuffle_sentences_6
+export CUDA_VISIBLE_DEVICES=3
+export EXP_NAME=original_6
 
-# run_s2s_crud, output_english_insert, eval_english_insert.out
 
-nohup python src/run_s2s_crud.py \
+nohup python src/run_s2s_perturb.py \
     --do_eval \
     --predict_with_generate \
     --evaluation_strategy "no" \
@@ -33,6 +32,6 @@ nohup python src/run_s2s_crud.py \
     --cache_dir ./cache/ \
     --overwrite_cache \
     --per_device_eval_batch_size 4 \
-    --perturb_method shuffle_sentences \
+    --perturb_method original \
     > tk_eval_log/eval_english_$EXP_NAME.out 2>&1 &
 

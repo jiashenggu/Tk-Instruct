@@ -5,10 +5,8 @@ export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 # export TRANSFORMERS_CACHE=/home/yizhongw/.cache/huggingface
 export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1
-export CUDA_VISIBLE_DEVICES=7
-export EXP_NAME=induction_multiple
-
-# run_s2s_crud, output_xlingual_insert, eval_xlingual_insert.out
+export CUDA_VISIBLE_DEVICES=3
+export EXP_NAME=induction_0
 
 nohup python src/run_s2s_induction.py \
     --do_eval \
