@@ -1,0 +1,607 @@
+{
+  "examples": {
+    "1": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: equipment\nOutput: equipamiento\n\nInput: suspicion\nOutput: sospecha\n\nInput: vote\nOutput: voto\n\nInput: lumber\nOutput: madera aserrada\n\nInput: meter\nOutput: medidor\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: equipment\nOutput: equipamiento\n\nInput: suspicion\nOutput: sospecha\n\nInput: vote\nOutput: voto\n\nInput: lumber\nOutput: madera aserrada\n\nInput: meter\nOutput: medidor"
+      }
+    },
+    "2": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: name\nOutput: nombre\n\nInput: pseudonym\nOutput: seud\u00f3nimo\n\nInput: smuggling\nOutput: contrabando\n\nInput: student\nOutput: estudiante\n\nInput: vector\nOutput: vector\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: name\nOutput: nombre\n\nInput: pseudonym\nOutput: seud\u00f3nimo\n\nInput: smuggling\nOutput: contrabando\n\nInput: student\nOutput: estudiante\n\nInput: vector\nOutput: vector"
+      }
+    },
+    "3": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: intention\nOutput: intenci\u00f3n\n\nInput: transcription\nOutput: transcripci\u00f3n\n\nInput: transfer\nOutput: transferencia\n\nInput: promise\nOutput: promesa\n\nInput: graph\nOutput: grafo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: intention\nOutput: intenci\u00f3n\n\nInput: transcription\nOutput: transcripci\u00f3n\n\nInput: transfer\nOutput: transferencia\n\nInput: promise\nOutput: promesa\n\nInput: graph\nOutput: grafo"
+      }
+    },
+    "4": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: topic\nOutput: tema\n\nInput: researcher\nOutput: investigador\n\nInput: bombardment\nOutput: bombardeo\n\nInput: transition\nOutput: transici\u00f3n\n\nInput: recommendation\nOutput: recomendaci\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: topic\nOutput: tema\n\nInput: researcher\nOutput: investigador\n\nInput: bombardment\nOutput: bombardeo\n\nInput: transition\nOutput: transici\u00f3n\n\nInput: recommendation\nOutput: recomendaci\u00f3n"
+      }
+    },
+    "5": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: destiny\nOutput: destino\n\nInput: defeat\nOutput: vencimiento\n\nInput: diary\nOutput: diario\n\nInput: manipulation\nOutput: manipulaci\u00f3n\n\nInput: bomb\nOutput: bomba\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: destiny\nOutput: destino\n\nInput: defeat\nOutput: vencimiento\n\nInput: diary\nOutput: diario\n\nInput: manipulation\nOutput: manipulaci\u00f3n\n\nInput: bomb\nOutput: bomba"
+      }
+    },
+    "6": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: project\nOutput: proyecto\n\nInput: revival\nOutput: avivamiento\n\nInput: shaft\nOutput: asta\n\nInput: scrap\nOutput: chatarra\n\nInput: cloud\nOutput: nube\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: project\nOutput: proyecto\n\nInput: revival\nOutput: avivamiento\n\nInput: shaft\nOutput: asta\n\nInput: scrap\nOutput: chatarra\n\nInput: cloud\nOutput: nube"
+      }
+    },
+    "7": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: hunger\nOutput: hambre\n\nInput: cotton\nOutput: algod\u00f3n\n\nInput: lizard\nOutput: lagarto\n\nInput: scholar\nOutput: erudito\n\nInput: proportion\nOutput: proporci\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: hunger\nOutput: hambre\n\nInput: cotton\nOutput: algod\u00f3n\n\nInput: lizard\nOutput: lagarto\n\nInput: scholar\nOutput: erudito\n\nInput: proportion\nOutput: proporci\u00f3n"
+      }
+    },
+    "8": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: cameo\nOutput: camafeo\n\nInput: peace\nOutput: paz\n\nInput: reduction\nOutput: reducci\u00f3n\n\nInput: box\nOutput: caja\n\nInput: field\nOutput: campo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: cameo\nOutput: camafeo\n\nInput: peace\nOutput: paz\n\nInput: reduction\nOutput: reducci\u00f3n\n\nInput: box\nOutput: caja\n\nInput: field\nOutput: campo"
+      }
+    },
+    "9": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: lift\nOutput: ascensor\n\nInput: magazine\nOutput: cargador\n\nInput: deck\nOutput: piso\n\nInput: mode\nOutput: moda\n\nInput: conflict\nOutput: discrepancia\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: lift\nOutput: ascensor\n\nInput: magazine\nOutput: cargador\n\nInput: deck\nOutput: piso\n\nInput: mode\nOutput: moda\n\nInput: conflict\nOutput: discrepancia"
+      }
+    },
+    "10": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: spiral\nOutput: h\u00e9lice\n\nInput: vocabulary\nOutput: vocabulario\n\nInput: drummer\nOutput: vendedor intinerante\n\nInput: west\nOutput: oeste\n\nInput: feud\nOutput: feudo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: spiral\nOutput: h\u00e9lice\n\nInput: vocabulary\nOutput: vocabulario\n\nInput: drummer\nOutput: vendedor intinerante\n\nInput: west\nOutput: oeste\n\nInput: feud\nOutput: feudo"
+      }
+    },
+    "11": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: affair\nOutput: amor\u00edo\n\nInput: emotion\nOutput: afecto\n\nInput: moment\nOutput: momento\n\nInput: arm\nOutput: brazo\n\nInput: curriculum\nOutput: curr\u00edculo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: affair\nOutput: amor\u00edo\n\nInput: emotion\nOutput: afecto\n\nInput: moment\nOutput: momento\n\nInput: arm\nOutput: brazo\n\nInput: curriculum\nOutput: curr\u00edculo"
+      }
+    },
+    "12": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: cycle\nOutput: ciclo\n\nInput: rudder\nOutput: tim\u00f3n\n\nInput: symphony\nOutput: sinfon\u00eda\n\nInput: camping\nOutput: camping\n\nInput: censorship\nOutput: censura\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: cycle\nOutput: ciclo\n\nInput: rudder\nOutput: tim\u00f3n\n\nInput: symphony\nOutput: sinfon\u00eda\n\nInput: camping\nOutput: camping\n\nInput: censorship\nOutput: censura"
+      }
+    },
+    "13": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: tissue\nOutput: tejido\n\nInput: evolution\nOutput: evoluci\u00f3n\n\nInput: rear\nOutput: posterior\n\nInput: factor\nOutput: factor\n\nInput: nectar\nOutput: n\u00e9ctar\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: tissue\nOutput: tejido\n\nInput: evolution\nOutput: evoluci\u00f3n\n\nInput: rear\nOutput: posterior\n\nInput: factor\nOutput: factor\n\nInput: nectar\nOutput: n\u00e9ctar"
+      }
+    },
+    "14": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: rifle\nOutput: fusil\n\nInput: analogy\nOutput: analog\u00eda\n\nInput: marketing\nOutput: mercadotecnia\n\nInput: portal\nOutput: portada\n\nInput: payment\nOutput: pago\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: rifle\nOutput: fusil\n\nInput: analogy\nOutput: analog\u00eda\n\nInput: marketing\nOutput: mercadotecnia\n\nInput: portal\nOutput: portada\n\nInput: payment\nOutput: pago"
+      }
+    },
+    "15": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: triumph\nOutput: triunfo\n\nInput: modification\nOutput: modificaci\u00f3n\n\nInput: establishment\nOutput: establecimiento\n\nInput: installment\nOutput: instalaci\u00f3n\n\nInput: finale\nOutput: final\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: triumph\nOutput: triunfo\n\nInput: modification\nOutput: modificaci\u00f3n\n\nInput: establishment\nOutput: establecimiento\n\nInput: installment\nOutput: instalaci\u00f3n\n\nInput: finale\nOutput: final"
+      }
+    },
+    "16": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: essay\nOutput: ensayo\n\nInput: count\nOutput: punto\n\nInput: battleship\nOutput: acorazado\n\nInput: circle\nOutput: c\u00edrculo\n\nInput: isotope\nOutput: is\u00f3topo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: essay\nOutput: ensayo\n\nInput: count\nOutput: punto\n\nInput: battleship\nOutput: acorazado\n\nInput: circle\nOutput: c\u00edrculo\n\nInput: isotope\nOutput: is\u00f3topo"
+      }
+    },
+    "17": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: classification\nOutput: clasificaci\u00f3n\n\nInput: credibility\nOutput: credibilidad\n\nInput: duty\nOutput: deber\n\nInput: recovery\nOutput: recuperaci\u00f3n\n\nInput: fauna\nOutput: fauna\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: classification\nOutput: clasificaci\u00f3n\n\nInput: credibility\nOutput: credibilidad\n\nInput: duty\nOutput: deber\n\nInput: recovery\nOutput: recuperaci\u00f3n\n\nInput: fauna\nOutput: fauna"
+      }
+    },
+    "18": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: classification\nOutput: clasificaci\u00f3n\n\nInput: administration\nOutput: administraci\u00f3n\n\nInput: prequel\nOutput: precuela\n\nInput: collaborator\nOutput: colaborador\n\nInput: home\nOutput: hogar\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: classification\nOutput: clasificaci\u00f3n\n\nInput: administration\nOutput: administraci\u00f3n\n\nInput: prequel\nOutput: precuela\n\nInput: collaborator\nOutput: colaborador\n\nInput: home\nOutput: hogar"
+      }
+    },
+    "19": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: bay\nOutput: alaz\u00e1n\n\nInput: funeral\nOutput: funeral\n\nInput: lesson\nOutput: lecci\u00f3n\n\nInput: cloud\nOutput: nube\n\nInput: surgery\nOutput: cirug\u00eda\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: bay\nOutput: alaz\u00e1n\n\nInput: funeral\nOutput: funeral\n\nInput: lesson\nOutput: lecci\u00f3n\n\nInput: cloud\nOutput: nube\n\nInput: surgery\nOutput: cirug\u00eda"
+      }
+    },
+    "20": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: opinion\nOutput: opini\u00f3n\n\nInput: contest\nOutput: concurso\n\nInput: thing\nOutput: cosa\n\nInput: rock\nOutput: piedra\n\nInput: sequence\nOutput: secuencia\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: opinion\nOutput: opini\u00f3n\n\nInput: contest\nOutput: concurso\n\nInput: thing\nOutput: cosa\n\nInput: rock\nOutput: piedra\n\nInput: sequence\nOutput: secuencia"
+      }
+    },
+    "21": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: tide\nOutput: marea\n\nInput: offer\nOutput: oferta\n\nInput: sponsor\nOutput: patrocinador\n\nInput: appointment\nOutput: cita\n\nInput: mainstream\nOutput: com\u00fan y corriente\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: tide\nOutput: marea\n\nInput: offer\nOutput: oferta\n\nInput: sponsor\nOutput: patrocinador\n\nInput: appointment\nOutput: cita\n\nInput: mainstream\nOutput: com\u00fan y corriente"
+      }
+    },
+    "22": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: antiquity\nOutput: antig\u00fcedad\n\nInput: trunk\nOutput: ba\u00fal\n\nInput: revenge\nOutput: venganza\n\nInput: iron\nOutput: hierro\n\nInput: scene\nOutput: escena\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: antiquity\nOutput: antig\u00fcedad\n\nInput: trunk\nOutput: ba\u00fal\n\nInput: revenge\nOutput: venganza\n\nInput: iron\nOutput: hierro\n\nInput: scene\nOutput: escena"
+      }
+    },
+    "23": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: disturbance\nOutput: perturbaci\u00f3n\n\nInput: summit\nOutput: cumbre\n\nInput: canal\nOutput: canal\n\nInput: noon\nOutput: mediod\u00eda\n\nInput: instrument\nOutput: instrumento\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: disturbance\nOutput: perturbaci\u00f3n\n\nInput: summit\nOutput: cumbre\n\nInput: canal\nOutput: canal\n\nInput: noon\nOutput: mediod\u00eda\n\nInput: instrument\nOutput: instrumento"
+      }
+    },
+    "24": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: attack\nOutput: ataque\n\nInput: crest\nOutput: cresta\n\nInput: cane\nOutput: ca\u00f1a\n\nInput: seller\nOutput: vendedor\n\nInput: joy\nOutput: alegr\u00eda\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: attack\nOutput: ataque\n\nInput: crest\nOutput: cresta\n\nInput: cane\nOutput: ca\u00f1a\n\nInput: seller\nOutput: vendedor\n\nInput: joy\nOutput: alegr\u00eda"
+      }
+    },
+    "25": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: railroad\nOutput: ferrocarril\n\nInput: corruption\nOutput: corrupci\u00f3n\n\nInput: camping\nOutput: camping\n\nInput: pony\nOutput: poni\n\nInput: deer\nOutput: ciervo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: railroad\nOutput: ferrocarril\n\nInput: corruption\nOutput: corrupci\u00f3n\n\nInput: camping\nOutput: camping\n\nInput: pony\nOutput: poni\n\nInput: deer\nOutput: ciervo"
+      }
+    },
+    "26": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: pack\nOutput: jaur\u00eda\n\nInput: beak\nOutput: pico\n\nInput: interior\nOutput: interior\n\nInput: jaw\nOutput: mand\u00edbula\n\nInput: score\nOutput: partitura\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: pack\nOutput: jaur\u00eda\n\nInput: beak\nOutput: pico\n\nInput: interior\nOutput: interior\n\nInput: jaw\nOutput: mand\u00edbula\n\nInput: score\nOutput: partitura"
+      }
+    },
+    "27": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: narrative\nOutput: narrativa\n\nInput: backdrop\nOutput: bambalina\n\nInput: resource\nOutput: recurso\n\nInput: steam\nOutput: vapor\n\nInput: foliage\nOutput: follaje\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: narrative\nOutput: narrativa\n\nInput: backdrop\nOutput: bambalina\n\nInput: resource\nOutput: recurso\n\nInput: steam\nOutput: vapor\n\nInput: foliage\nOutput: follaje"
+      }
+    },
+    "28": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: recipe\nOutput: receta\n\nInput: city\nOutput: ciudad\n\nInput: contender\nOutput: contendiente\n\nInput: status\nOutput: estado\n\nInput: pile\nOutput: mont\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: recipe\nOutput: receta\n\nInput: city\nOutput: ciudad\n\nInput: contender\nOutput: contendiente\n\nInput: status\nOutput: estado\n\nInput: pile\nOutput: mont\u00f3n"
+      }
+    },
+    "29": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: requirement\nOutput: exigencia\n\nInput: composer\nOutput: compositor\n\nInput: label\nOutput: etiqueta\n\nInput: mention\nOutput: menci\u00f3n\n\nInput: leisure\nOutput: ocio\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: requirement\nOutput: exigencia\n\nInput: composer\nOutput: compositor\n\nInput: label\nOutput: etiqueta\n\nInput: mention\nOutput: menci\u00f3n\n\nInput: leisure\nOutput: ocio"
+      }
+    },
+    "30": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: selection\nOutput: selecci\u00f3n\n\nInput: decade\nOutput: d\u00e9cada\n\nInput: tone\nOutput: tono\n\nInput: mathematician\nOutput: matem\u00e1tico\n\nInput: simulation\nOutput: simulaci\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: selection\nOutput: selecci\u00f3n\n\nInput: decade\nOutput: d\u00e9cada\n\nInput: tone\nOutput: tono\n\nInput: mathematician\nOutput: matem\u00e1tico\n\nInput: simulation\nOutput: simulaci\u00f3n"
+      }
+    },
+    "31": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: superstructure\nOutput: superestructura\n\nInput: sailing\nOutput: navegaci\u00f3n\n\nInput: kitchen\nOutput: cocina\n\nInput: whale\nOutput: ballena\n\nInput: television\nOutput: televisi\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: superstructure\nOutput: superestructura\n\nInput: sailing\nOutput: navegaci\u00f3n\n\nInput: kitchen\nOutput: cocina\n\nInput: whale\nOutput: ballena\n\nInput: television\nOutput: televisi\u00f3n"
+      }
+    },
+    "32": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: vector\nOutput: vector\n\nInput: punch\nOutput: ponche\n\nInput: maid\nOutput: doncella\n\nInput: context\nOutput: contexto\n\nInput: symphony\nOutput: sinfon\u00eda\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: vector\nOutput: vector\n\nInput: punch\nOutput: ponche\n\nInput: maid\nOutput: doncella\n\nInput: context\nOutput: contexto\n\nInput: symphony\nOutput: sinfon\u00eda"
+      }
+    },
+    "33": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: legitimacy\nOutput: legitimidad\n\nInput: uranium\nOutput: uranio\n\nInput: agenda\nOutput: agenda\n\nInput: merchant\nOutput: comerciante\n\nInput: hamlet\nOutput: aldehuela\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: legitimacy\nOutput: legitimidad\n\nInput: uranium\nOutput: uranio\n\nInput: agenda\nOutput: agenda\n\nInput: merchant\nOutput: comerciante\n\nInput: hamlet\nOutput: aldehuela"
+      }
+    },
+    "34": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: electorate\nOutput: electorado\n\nInput: bow\nOutput: arco\n\nInput: spring\nOutput: resorte\n\nInput: agent\nOutput: agente\n\nInput: sculptor\nOutput: escultor\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: electorate\nOutput: electorado\n\nInput: bow\nOutput: arco\n\nInput: spring\nOutput: resorte\n\nInput: agent\nOutput: agente\n\nInput: sculptor\nOutput: escultor"
+      }
+    },
+    "35": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: governor\nOutput: gobernador\n\nInput: development\nOutput: desarrollo\n\nInput: summary\nOutput: resumen\n\nInput: distance\nOutput: distancia\n\nInput: poll\nOutput: encuesta\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: governor\nOutput: gobernador\n\nInput: development\nOutput: desarrollo\n\nInput: summary\nOutput: resumen\n\nInput: distance\nOutput: distancia\n\nInput: poll\nOutput: encuesta"
+      }
+    },
+    "36": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: law\nOutput: ley\n\nInput: capability\nOutput: capacidad\n\nInput: crew\nOutput: tripulaci\u00f3n\n\nInput: antiquity\nOutput: antig\u00fcedad\n\nInput: sphere\nOutput: esfera\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: law\nOutput: ley\n\nInput: capability\nOutput: capacidad\n\nInput: crew\nOutput: tripulaci\u00f3n\n\nInput: antiquity\nOutput: antig\u00fcedad\n\nInput: sphere\nOutput: esfera"
+      }
+    },
+    "37": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: fusion\nOutput: fusi\u00f3n\n\nInput: amount\nOutput: cantidad\n\nInput: metre\nOutput: metro\n\nInput: cuisine\nOutput: cocina\n\nInput: presence\nOutput: presencia\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: fusion\nOutput: fusi\u00f3n\n\nInput: amount\nOutput: cantidad\n\nInput: metre\nOutput: metro\n\nInput: cuisine\nOutput: cocina\n\nInput: presence\nOutput: presencia"
+      }
+    },
+    "38": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: folklore\nOutput: folclore\n\nInput: service\nOutput: servicio\n\nInput: business\nOutput: negocio\n\nInput: fault\nOutput: culpa\n\nInput: authenticity\nOutput: autenticidad\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: folklore\nOutput: folclore\n\nInput: service\nOutput: servicio\n\nInput: business\nOutput: negocio\n\nInput: fault\nOutput: culpa\n\nInput: authenticity\nOutput: autenticidad"
+      }
+    },
+    "39": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: millimetre\nOutput: mil\u00edmetro\n\nInput: cast\nOutput: reparto\n\nInput: action\nOutput: acci\u00f3n\n\nInput: memory\nOutput: memoria\n\nInput: drunk\nOutput: ebriedad\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: millimetre\nOutput: mil\u00edmetro\n\nInput: cast\nOutput: reparto\n\nInput: action\nOutput: acci\u00f3n\n\nInput: memory\nOutput: memoria\n\nInput: drunk\nOutput: ebriedad"
+      }
+    },
+    "40": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: income\nOutput: ingreso\n\nInput: hook\nOutput: anzuelo\n\nInput: summer\nOutput: verano\n\nInput: coal\nOutput: carb\u00f3n\n\nInput: soldier\nOutput: soldado\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: income\nOutput: ingreso\n\nInput: hook\nOutput: anzuelo\n\nInput: summer\nOutput: verano\n\nInput: coal\nOutput: carb\u00f3n\n\nInput: soldier\nOutput: soldado"
+      }
+    },
+    "41": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: achievement\nOutput: logro\n\nInput: witchcraft\nOutput: brujer\u00eda\n\nInput: plenty\nOutput: abundancia\n\nInput: virtue\nOutput: virtud\n\nInput: soap\nOutput: jab\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: achievement\nOutput: logro\n\nInput: witchcraft\nOutput: brujer\u00eda\n\nInput: plenty\nOutput: abundancia\n\nInput: virtue\nOutput: virtud\n\nInput: soap\nOutput: jab\u00f3n"
+      }
+    },
+    "42": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: fit\nOutput: convulci\u00f3n\n\nInput: hop\nOutput: l\u00fapulo\n\nInput: sociology\nOutput: sociolog\u00eda\n\nInput: reserve\nOutput: reserva\n\nInput: tip\nOutput: propina\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: fit\nOutput: convulci\u00f3n\n\nInput: hop\nOutput: l\u00fapulo\n\nInput: sociology\nOutput: sociolog\u00eda\n\nInput: reserve\nOutput: reserva\n\nInput: tip\nOutput: propina"
+      }
+    },
+    "43": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: wing\nOutput: ala\n\nInput: period\nOutput: per\u00edodo\n\nInput: conspiracy\nOutput: conspiraci\u00f3n\n\nInput: isotope\nOutput: is\u00f3topo\n\nInput: wolf\nOutput: lobo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: wing\nOutput: ala\n\nInput: period\nOutput: per\u00edodo\n\nInput: conspiracy\nOutput: conspiraci\u00f3n\n\nInput: isotope\nOutput: is\u00f3topo\n\nInput: wolf\nOutput: lobo"
+      }
+    },
+    "44": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: drift\nOutput: ir a la deriva\n\nInput: gathering\nOutput: fiesta\n\nInput: announcement\nOutput: anunciaci\u00f3n\n\nInput: date\nOutput: fecha\n\nInput: bottom\nOutput: fondo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: drift\nOutput: ir a la deriva\n\nInput: gathering\nOutput: fiesta\n\nInput: announcement\nOutput: anunciaci\u00f3n\n\nInput: date\nOutput: fecha\n\nInput: bottom\nOutput: fondo"
+      }
+    },
+    "45": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: pursuit\nOutput: persecuci\u00f3n\n\nInput: piercing\nOutput: pirsin\n\nInput: founder\nOutput: fundador\n\nInput: friendship\nOutput: amistad\n\nInput: art\nOutput: arte\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: pursuit\nOutput: persecuci\u00f3n\n\nInput: piercing\nOutput: pirsin\n\nInput: founder\nOutput: fundador\n\nInput: friendship\nOutput: amistad\n\nInput: art\nOutput: arte"
+      }
+    },
+    "46": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: terrace\nOutput: terraza\n\nInput: emblem\nOutput: emblema\n\nInput: stance\nOutput: postura\n\nInput: side\nOutput: lado\n\nInput: assertion\nOutput: afirmaci\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: terrace\nOutput: terraza\n\nInput: emblem\nOutput: emblema\n\nInput: stance\nOutput: postura\n\nInput: side\nOutput: lado\n\nInput: assertion\nOutput: afirmaci\u00f3n"
+      }
+    },
+    "47": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: entry\nOutput: entrada\n\nInput: zoo\nOutput: zoo\n\nInput: preparation\nOutput: preparaci\u00f3n\n\nInput: battery\nOutput: pila\n\nInput: chain\nOutput: cadena\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: entry\nOutput: entrada\n\nInput: zoo\nOutput: zoo\n\nInput: preparation\nOutput: preparaci\u00f3n\n\nInput: battery\nOutput: pila\n\nInput: chain\nOutput: cadena"
+      }
+    },
+    "48": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: climax\nOutput: cl\u00edmax\n\nInput: command\nOutput: orden\n\nInput: coral\nOutput: coral\n\nInput: disturbance\nOutput: perturbaci\u00f3n\n\nInput: cooperation\nOutput: cooperaci\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: climax\nOutput: cl\u00edmax\n\nInput: command\nOutput: orden\n\nInput: coral\nOutput: coral\n\nInput: disturbance\nOutput: perturbaci\u00f3n\n\nInput: cooperation\nOutput: cooperaci\u00f3n"
+      }
+    },
+    "49": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: overlap\nOutput: solapo\n\nInput: coalition\nOutput: coalici\u00f3n\n\nInput: continuity\nOutput: continuidad\n\nInput: exercise\nOutput: ejercicio\n\nInput: tradition\nOutput: tradici\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: overlap\nOutput: solapo\n\nInput: coalition\nOutput: coalici\u00f3n\n\nInput: continuity\nOutput: continuidad\n\nInput: exercise\nOutput: ejercicio\n\nInput: tradition\nOutput: tradici\u00f3n"
+      }
+    },
+    "50": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: alternative\nOutput: alternativo\n\nInput: stroke\nOutput: golpe\n\nInput: manufacturing\nOutput: fabricaci\u00f3n\n\nInput: mock\nOutput: imitaci\u00f3n\n\nInput: pseudonym\nOutput: seud\u00f3nimo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: alternative\nOutput: alternativo\n\nInput: stroke\nOutput: golpe\n\nInput: manufacturing\nOutput: fabricaci\u00f3n\n\nInput: mock\nOutput: imitaci\u00f3n\n\nInput: pseudonym\nOutput: seud\u00f3nimo"
+      }
+    },
+    "51": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: mate\nOutput: pareja\n\nInput: influx\nOutput: entrada\n\nInput: assembly\nOutput: asamblea\n\nInput: consultation\nOutput: consulta\n\nInput: mandate\nOutput: mandato\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: mate\nOutput: pareja\n\nInput: influx\nOutput: entrada\n\nInput: assembly\nOutput: asamblea\n\nInput: consultation\nOutput: consulta\n\nInput: mandate\nOutput: mandato"
+      }
+    },
+    "52": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: liquor\nOutput: licor\n\nInput: racism\nOutput: racismo\n\nInput: recovery\nOutput: recuperaci\u00f3n\n\nInput: neutrality\nOutput: neutralidad\n\nInput: acid\nOutput: \u00e1cido\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: liquor\nOutput: licor\n\nInput: racism\nOutput: racismo\n\nInput: recovery\nOutput: recuperaci\u00f3n\n\nInput: neutrality\nOutput: neutralidad\n\nInput: acid\nOutput: \u00e1cido"
+      }
+    },
+    "53": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: dragon\nOutput: drag\u00f3n\n\nInput: liberation\nOutput: liberaci\u00f3n\n\nInput: meditation\nOutput: meditaci\u00f3n\n\nInput: belief\nOutput: creencia\n\nInput: piano\nOutput: piano\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: dragon\nOutput: drag\u00f3n\n\nInput: liberation\nOutput: liberaci\u00f3n\n\nInput: meditation\nOutput: meditaci\u00f3n\n\nInput: belief\nOutput: creencia\n\nInput: piano\nOutput: piano"
+      }
+    },
+    "54": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: southeast\nOutput: sureste\n\nInput: spelling\nOutput: ortograf\u00eda\n\nInput: possibility\nOutput: posibilidad\n\nInput: persecution\nOutput: persecuci\u00f3n\n\nInput: uncle\nOutput: t\u00edo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: southeast\nOutput: sureste\n\nInput: spelling\nOutput: ortograf\u00eda\n\nInput: possibility\nOutput: posibilidad\n\nInput: persecution\nOutput: persecuci\u00f3n\n\nInput: uncle\nOutput: t\u00edo"
+      }
+    },
+    "55": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: element\nOutput: elemento\n\nInput: release\nOutput: versi\u00f3n\n\nInput: attention\nOutput: atenci\u00f3n\n\nInput: judgment\nOutput: juicio\n\nInput: store\nOutput: dep\u00f3sito\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: element\nOutput: elemento\n\nInput: release\nOutput: versi\u00f3n\n\nInput: attention\nOutput: atenci\u00f3n\n\nInput: judgment\nOutput: juicio\n\nInput: store\nOutput: dep\u00f3sito"
+      }
+    },
+    "56": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: podium\nOutput: podio\n\nInput: galaxy\nOutput: galaxia\n\nInput: readiness\nOutput: preparaci\u00f3n\n\nInput: crack\nOutput: chasquido\n\nInput: spin\nOutput: vuelta\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: podium\nOutput: podio\n\nInput: galaxy\nOutput: galaxia\n\nInput: readiness\nOutput: preparaci\u00f3n\n\nInput: crack\nOutput: chasquido\n\nInput: spin\nOutput: vuelta"
+      }
+    },
+    "57": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: lifetime\nOutput: eternidad\n\nInput: cooling\nOutput: enfriamiento\n\nInput: survivor\nOutput: sobreviviente\n\nInput: assessment\nOutput: evaluaci\u00f3n\n\nInput: dance\nOutput: baile\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: lifetime\nOutput: eternidad\n\nInput: cooling\nOutput: enfriamiento\n\nInput: survivor\nOutput: sobreviviente\n\nInput: assessment\nOutput: evaluaci\u00f3n\n\nInput: dance\nOutput: baile"
+      }
+    },
+    "58": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: hand\nOutput: mano\n\nInput: expertise\nOutput: pericia\n\nInput: division\nOutput: divisi\u00f3n\n\nInput: quest\nOutput: b\u00fasqueda\n\nInput: liability\nOutput: responsabilidad\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: hand\nOutput: mano\n\nInput: expertise\nOutput: pericia\n\nInput: division\nOutput: divisi\u00f3n\n\nInput: quest\nOutput: b\u00fasqueda\n\nInput: liability\nOutput: responsabilidad"
+      }
+    },
+    "59": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: data\nOutput: datos\n\nInput: trait\nOutput: rasgo\n\nInput: nursery\nOutput: criadero\n\nInput: disk\nOutput: disco\n\nInput: couple\nOutput: un par de\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: data\nOutput: datos\n\nInput: trait\nOutput: rasgo\n\nInput: nursery\nOutput: criadero\n\nInput: disk\nOutput: disco\n\nInput: couple\nOutput: un par de"
+      }
+    },
+    "60": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: breast\nOutput: pechuga\n\nInput: columnist\nOutput: columnista\n\nInput: scope\nOutput: mira\n\nInput: toilet\nOutput: inodoro\n\nInput: check\nOutput: cuenta\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: breast\nOutput: pechuga\n\nInput: columnist\nOutput: columnista\n\nInput: scope\nOutput: mira\n\nInput: toilet\nOutput: inodoro\n\nInput: check\nOutput: cuenta"
+      }
+    },
+    "61": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: defence\nOutput: defensa\n\nInput: profit\nOutput: ganancia\n\nInput: grass\nOutput: hierba\n\nInput: reliability\nOutput: fiabilidad\n\nInput: lane\nOutput: carrera\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: defence\nOutput: defensa\n\nInput: profit\nOutput: ganancia\n\nInput: grass\nOutput: hierba\n\nInput: reliability\nOutput: fiabilidad\n\nInput: lane\nOutput: carrera"
+      }
+    },
+    "62": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: group\nOutput: grupo\n\nInput: hierarchy\nOutput: jerarqu\u00eda\n\nInput: exhaust\nOutput: tubo de escape\n\nInput: limb\nOutput: miembro\n\nInput: whale\nOutput: ballena\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: group\nOutput: grupo\n\nInput: hierarchy\nOutput: jerarqu\u00eda\n\nInput: exhaust\nOutput: tubo de escape\n\nInput: limb\nOutput: miembro\n\nInput: whale\nOutput: ballena"
+      }
+    },
+    "63": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: draught\nOutput: corriente\n\nInput: pianist\nOutput: pianista\n\nInput: pose\nOutput: pose\n\nInput: yard\nOutput: patio\n\nInput: chemical\nOutput: producto qu\u00edmico\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: draught\nOutput: corriente\n\nInput: pianist\nOutput: pianista\n\nInput: pose\nOutput: pose\n\nInput: yard\nOutput: patio\n\nInput: chemical\nOutput: producto qu\u00edmico"
+      }
+    },
+    "64": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: behavior\nOutput: comportamiento\n\nInput: hour\nOutput: hora\n\nInput: iron\nOutput: hierro\n\nInput: claim\nOutput: concesi\u00f3n\n\nInput: component\nOutput: componente\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: behavior\nOutput: comportamiento\n\nInput: hour\nOutput: hora\n\nInput: iron\nOutput: hierro\n\nInput: claim\nOutput: concesi\u00f3n\n\nInput: component\nOutput: componente"
+      }
+    },
+    "65": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: abuse\nOutput: abuso\n\nInput: concrete\nOutput: hormig\u00f3n\n\nInput: intersection\nOutput: intersecci\u00f3n\n\nInput: cavity\nOutput: cavidad\n\nInput: sole\nOutput: suela\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: abuse\nOutput: abuso\n\nInput: concrete\nOutput: hormig\u00f3n\n\nInput: intersection\nOutput: intersecci\u00f3n\n\nInput: cavity\nOutput: cavidad\n\nInput: sole\nOutput: suela"
+      }
+    },
+    "66": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: rotation\nOutput: rotaci\u00f3n\n\nInput: bar\nOutput: barra\n\nInput: sphere\nOutput: esfera\n\nInput: planet\nOutput: planeta\n\nInput: ceasefire\nOutput: alto el fuego\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: rotation\nOutput: rotaci\u00f3n\n\nInput: bar\nOutput: barra\n\nInput: sphere\nOutput: esfera\n\nInput: planet\nOutput: planeta\n\nInput: ceasefire\nOutput: alto el fuego"
+      }
+    },
+    "67": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: boycott\nOutput: boicot\n\nInput: expectation\nOutput: expectativa\n\nInput: parody\nOutput: parodia\n\nInput: cable\nOutput: cable\n\nInput: measurement\nOutput: medida\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: boycott\nOutput: boicot\n\nInput: expectation\nOutput: expectativa\n\nInput: parody\nOutput: parodia\n\nInput: cable\nOutput: cable\n\nInput: measurement\nOutput: medida"
+      }
+    },
+    "68": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: battery\nOutput: pila\n\nInput: port\nOutput: puerto\n\nInput: coordination\nOutput: coordinaci\u00f3n\n\nInput: county\nOutput: condado\n\nInput: orbit\nOutput: \u00f3rbita\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: battery\nOutput: pila\n\nInput: port\nOutput: puerto\n\nInput: coordination\nOutput: coordinaci\u00f3n\n\nInput: county\nOutput: condado\n\nInput: orbit\nOutput: \u00f3rbita"
+      }
+    },
+    "69": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: crusade\nOutput: cruzada\n\nInput: companion\nOutput: compa\u00f1ero\n\nInput: shell\nOutput: c\u00e1scara\n\nInput: choice\nOutput: opci\u00f3n\n\nInput: wrestler\nOutput: luchador\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: crusade\nOutput: cruzada\n\nInput: companion\nOutput: compa\u00f1ero\n\nInput: shell\nOutput: c\u00e1scara\n\nInput: choice\nOutput: opci\u00f3n\n\nInput: wrestler\nOutput: luchador"
+      }
+    },
+    "70": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: condition\nOutput: condici\u00f3n\n\nInput: tennis\nOutput: tenis\n\nInput: step\nOutput: paso\n\nInput: expert\nOutput: perito\n\nInput: consideration\nOutput: consideraci\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: condition\nOutput: condici\u00f3n\n\nInput: tennis\nOutput: tenis\n\nInput: step\nOutput: paso\n\nInput: expert\nOutput: perito\n\nInput: consideration\nOutput: consideraci\u00f3n"
+      }
+    },
+    "71": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: invitation\nOutput: invitaci\u00f3n\n\nInput: injection\nOutput: inyecci\u00f3n\n\nInput: consensus\nOutput: consenso\n\nInput: punch\nOutput: ponche\n\nInput: balloon\nOutput: globo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: invitation\nOutput: invitaci\u00f3n\n\nInput: injection\nOutput: inyecci\u00f3n\n\nInput: consensus\nOutput: consenso\n\nInput: punch\nOutput: ponche\n\nInput: balloon\nOutput: globo"
+      }
+    },
+    "72": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: recapture\nOutput: reconquista\n\nInput: poem\nOutput: poema\n\nInput: scrap\nOutput: chatarra\n\nInput: booklet\nOutput: libreto\n\nInput: marriage\nOutput: uni\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: recapture\nOutput: reconquista\n\nInput: poem\nOutput: poema\n\nInput: scrap\nOutput: chatarra\n\nInput: booklet\nOutput: libreto\n\nInput: marriage\nOutput: uni\u00f3n"
+      }
+    },
+    "73": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: enclosure\nOutput: encierro\n\nInput: gain\nOutput: ganancia\n\nInput: intervention\nOutput: intervenci\u00f3n\n\nInput: tower\nOutput: torre\n\nInput: drunk\nOutput: ebriedad\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: enclosure\nOutput: encierro\n\nInput: gain\nOutput: ganancia\n\nInput: intervention\nOutput: intervenci\u00f3n\n\nInput: tower\nOutput: torre\n\nInput: drunk\nOutput: ebriedad"
+      }
+    },
+    "74": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: pace\nOutput: paso\n\nInput: basket\nOutput: canasta\n\nInput: tax\nOutput: impuesto\n\nInput: target\nOutput: blanco\n\nInput: tenure\nOutput: antig\u00fcedad\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: pace\nOutput: paso\n\nInput: basket\nOutput: canasta\n\nInput: tax\nOutput: impuesto\n\nInput: target\nOutput: blanco\n\nInput: tenure\nOutput: antig\u00fcedad"
+      }
+    },
+    "75": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: grape\nOutput: uva\n\nInput: threat\nOutput: amenaza\n\nInput: adoption\nOutput: adopci\u00f3n\n\nInput: scenery\nOutput: decorado\n\nInput: apparatus\nOutput: aparato\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: grape\nOutput: uva\n\nInput: threat\nOutput: amenaza\n\nInput: adoption\nOutput: adopci\u00f3n\n\nInput: scenery\nOutput: decorado\n\nInput: apparatus\nOutput: aparato"
+      }
+    },
+    "76": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: layer\nOutput: gallina ponedora\n\nInput: date\nOutput: fecha\n\nInput: survey\nOutput: supervisi\u00f3n\n\nInput: homage\nOutput: homenaje\n\nInput: confusion\nOutput: confusi\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: layer\nOutput: gallina ponedora\n\nInput: date\nOutput: fecha\n\nInput: survey\nOutput: supervisi\u00f3n\n\nInput: homage\nOutput: homenaje\n\nInput: confusion\nOutput: confusi\u00f3n"
+      }
+    },
+    "77": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: fraternity\nOutput: fraternidad\n\nInput: database\nOutput: base de datos\n\nInput: isotope\nOutput: is\u00f3topo\n\nInput: purpose\nOutput: prop\u00f3sito\n\nInput: food\nOutput: alimento\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: fraternity\nOutput: fraternidad\n\nInput: database\nOutput: base de datos\n\nInput: isotope\nOutput: is\u00f3topo\n\nInput: purpose\nOutput: prop\u00f3sito\n\nInput: food\nOutput: alimento"
+      }
+    },
+    "78": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: courage\nOutput: valor\n\nInput: pilot\nOutput: piloto\n\nInput: run\nOutput: galopar\n\nInput: monopoly\nOutput: monopolio\n\nInput: bag\nOutput: bolsa\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: courage\nOutput: valor\n\nInput: pilot\nOutput: piloto\n\nInput: run\nOutput: galopar\n\nInput: monopoly\nOutput: monopolio\n\nInput: bag\nOutput: bolsa"
+      }
+    },
+    "79": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: collaborator\nOutput: colaborador\n\nInput: imprisonment\nOutput: encarcelamiento\n\nInput: cheek\nOutput: nalga\n\nInput: gift\nOutput: don\n\nInput: dish\nOutput: plato\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: collaborator\nOutput: colaborador\n\nInput: imprisonment\nOutput: encarcelamiento\n\nInput: cheek\nOutput: nalga\n\nInput: gift\nOutput: don\n\nInput: dish\nOutput: plato"
+      }
+    },
+    "80": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: physicist\nOutput: f\u00edsico\n\nInput: prediction\nOutput: predicci\u00f3n\n\nInput: analyst\nOutput: analista\n\nInput: pole\nOutput: polo\n\nInput: climbing\nOutput: escalada\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: physicist\nOutput: f\u00edsico\n\nInput: prediction\nOutput: predicci\u00f3n\n\nInput: analyst\nOutput: analista\n\nInput: pole\nOutput: polo\n\nInput: climbing\nOutput: escalada"
+      }
+    },
+    "81": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: embassy\nOutput: embajada\n\nInput: wrestler\nOutput: luchador\n\nInput: opener\nOutput: abridor\n\nInput: discourse\nOutput: discurso\n\nInput: war\nOutput: guerra\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: embassy\nOutput: embajada\n\nInput: wrestler\nOutput: luchador\n\nInput: opener\nOutput: abridor\n\nInput: discourse\nOutput: discurso\n\nInput: war\nOutput: guerra"
+      }
+    },
+    "82": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: cloth\nOutput: trapo\n\nInput: stunt\nOutput: proeza\n\nInput: violence\nOutput: violencia\n\nInput: group\nOutput: grupo\n\nInput: explosion\nOutput: explosi\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: cloth\nOutput: trapo\n\nInput: stunt\nOutput: proeza\n\nInput: violence\nOutput: violencia\n\nInput: group\nOutput: grupo\n\nInput: explosion\nOutput: explosi\u00f3n"
+      }
+    },
+    "83": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: synthesis\nOutput: s\u00edntesis\n\nInput: material\nOutput: material\n\nInput: house\nOutput: casa\n\nInput: garage\nOutput: garaje\n\nInput: glider\nOutput: planeador\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: synthesis\nOutput: s\u00edntesis\n\nInput: material\nOutput: material\n\nInput: house\nOutput: casa\n\nInput: garage\nOutput: garaje\n\nInput: glider\nOutput: planeador"
+      }
+    },
+    "84": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: immunity\nOutput: inmunidad\n\nInput: relay\nOutput: relevos\n\nInput: advice\nOutput: consejo\n\nInput: accident\nOutput: accidente\n\nInput: scope\nOutput: mira\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: immunity\nOutput: inmunidad\n\nInput: relay\nOutput: relevos\n\nInput: advice\nOutput: consejo\n\nInput: accident\nOutput: accidente\n\nInput: scope\nOutput: mira"
+      }
+    },
+    "85": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: photographer\nOutput: fot\u00f3grafo\n\nInput: unemployment\nOutput: desempleo\n\nInput: arm\nOutput: brazo\n\nInput: creator\nOutput: creador\n\nInput: prevalence\nOutput: predominancia\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: photographer\nOutput: fot\u00f3grafo\n\nInput: unemployment\nOutput: desempleo\n\nInput: arm\nOutput: brazo\n\nInput: creator\nOutput: creador\n\nInput: prevalence\nOutput: predominancia"
+      }
+    },
+    "86": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: lumber\nOutput: madera aserrada\n\nInput: relay\nOutput: relevos\n\nInput: astronomy\nOutput: astronom\u00eda\n\nInput: gathering\nOutput: fiesta\n\nInput: edge\nOutput: ventaja\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: lumber\nOutput: madera aserrada\n\nInput: relay\nOutput: relevos\n\nInput: astronomy\nOutput: astronom\u00eda\n\nInput: gathering\nOutput: fiesta\n\nInput: edge\nOutput: ventaja"
+      }
+    },
+    "87": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: settlement\nOutput: acuerdo\n\nInput: mobility\nOutput: movilidad\n\nInput: basin\nOutput: cuenca\n\nInput: bicycle\nOutput: bicicleta\n\nInput: boost\nOutput: impulso\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: settlement\nOutput: acuerdo\n\nInput: mobility\nOutput: movilidad\n\nInput: basin\nOutput: cuenca\n\nInput: bicycle\nOutput: bicicleta\n\nInput: boost\nOutput: impulso"
+      }
+    },
+    "88": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: security\nOutput: seguridad\n\nInput: sermon\nOutput: serm\u00f3n\n\nInput: day\nOutput: d\u00eda\n\nInput: skull\nOutput: calavera\n\nInput: increase\nOutput: aumento\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: security\nOutput: seguridad\n\nInput: sermon\nOutput: serm\u00f3n\n\nInput: day\nOutput: d\u00eda\n\nInput: skull\nOutput: calavera\n\nInput: increase\nOutput: aumento"
+      }
+    },
+    "89": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: marriage\nOutput: uni\u00f3n\n\nInput: prospect\nOutput: expectativa\n\nInput: analogy\nOutput: analog\u00eda\n\nInput: stunt\nOutput: proeza\n\nInput: patch\nOutput: parche\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: marriage\nOutput: uni\u00f3n\n\nInput: prospect\nOutput: expectativa\n\nInput: analogy\nOutput: analog\u00eda\n\nInput: stunt\nOutput: proeza\n\nInput: patch\nOutput: parche"
+      }
+    },
+    "90": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: synagogue\nOutput: sinagoga\n\nInput: vicinity\nOutput: cercan\u00edas\n\nInput: producer\nOutput: productor\n\nInput: collection\nOutput: colecci\u00f3n\n\nInput: guilt\nOutput: culpa\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: synagogue\nOutput: sinagoga\n\nInput: vicinity\nOutput: cercan\u00edas\n\nInput: producer\nOutput: productor\n\nInput: collection\nOutput: colecci\u00f3n\n\nInput: guilt\nOutput: culpa"
+      }
+    },
+    "91": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: request\nOutput: solicitud\n\nInput: superiority\nOutput: superioridad\n\nInput: judge\nOutput: juez\n\nInput: reach\nOutput: alcance\n\nInput: fission\nOutput: fisi\u00f3n\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: request\nOutput: solicitud\n\nInput: superiority\nOutput: superioridad\n\nInput: judge\nOutput: juez\n\nInput: reach\nOutput: alcance\n\nInput: fission\nOutput: fisi\u00f3n"
+      }
+    },
+    "92": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: outcome\nOutput: resultado\n\nInput: mention\nOutput: menci\u00f3n\n\nInput: narrator\nOutput: narrador\n\nInput: sabotage\nOutput: sabotaje\n\nInput: gap\nOutput: brecha\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: outcome\nOutput: resultado\n\nInput: mention\nOutput: menci\u00f3n\n\nInput: narrator\nOutput: narrador\n\nInput: sabotage\nOutput: sabotaje\n\nInput: gap\nOutput: brecha"
+      }
+    },
+    "93": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: example\nOutput: ejemplar\n\nInput: device\nOutput: dispositivo\n\nInput: curtain\nOutput: cortina\n\nInput: potassium\nOutput: potasio\n\nInput: sin\nOutput: pecado\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: example\nOutput: ejemplar\n\nInput: device\nOutput: dispositivo\n\nInput: curtain\nOutput: cortina\n\nInput: potassium\nOutput: potasio\n\nInput: sin\nOutput: pecado"
+      }
+    },
+    "94": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: treat\nOutput: sorpresa\n\nInput: elevation\nOutput: altitud\n\nInput: pursuit\nOutput: persecuci\u00f3n\n\nInput: button\nOutput: bot\u00f3n\n\nInput: trauma\nOutput: trauma\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: treat\nOutput: sorpresa\n\nInput: elevation\nOutput: altitud\n\nInput: pursuit\nOutput: persecuci\u00f3n\n\nInput: button\nOutput: bot\u00f3n\n\nInput: trauma\nOutput: trauma"
+      }
+    },
+    "95": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: pseudonym\nOutput: seud\u00f3nimo\n\nInput: change\nOutput: cambio\n\nInput: recapture\nOutput: reconquista\n\nInput: expert\nOutput: perito\n\nInput: segment\nOutput: segmento\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: pseudonym\nOutput: seud\u00f3nimo\n\nInput: change\nOutput: cambio\n\nInput: recapture\nOutput: reconquista\n\nInput: expert\nOutput: perito\n\nInput: segment\nOutput: segmento"
+      }
+    },
+    "96": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: metabolism\nOutput: metabolismo\n\nInput: cancellation\nOutput: cancelaci\u00f3n\n\nInput: convoy\nOutput: caravana\n\nInput: inspection\nOutput: inspecci\u00f3n\n\nInput: label\nOutput: etiqueta\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: metabolism\nOutput: metabolismo\n\nInput: cancellation\nOutput: cancelaci\u00f3n\n\nInput: convoy\nOutput: caravana\n\nInput: inspection\nOutput: inspecci\u00f3n\n\nInput: label\nOutput: etiqueta"
+      }
+    },
+    "97": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: holiday\nOutput: d\u00eda feriado\n\nInput: respect\nOutput: respeto\n\nInput: diabetes\nOutput: diabetes\n\nInput: assignment\nOutput: tarea\n\nInput: biographer\nOutput: bi\u00f3grafo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: holiday\nOutput: d\u00eda feriado\n\nInput: respect\nOutput: respeto\n\nInput: diabetes\nOutput: diabetes\n\nInput: assignment\nOutput: tarea\n\nInput: biographer\nOutput: bi\u00f3grafo"
+      }
+    },
+    "98": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: chief\nOutput: jefe\n\nInput: athletics\nOutput: atletismo\n\nInput: perimeter\nOutput: per\u00edmetro\n\nInput: disruption\nOutput: desorden\n\nInput: danger\nOutput: peligro\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: chief\nOutput: jefe\n\nInput: athletics\nOutput: atletismo\n\nInput: perimeter\nOutput: per\u00edmetro\n\nInput: disruption\nOutput: desorden\n\nInput: danger\nOutput: peligro"
+      }
+    },
+    "99": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: corporation\nOutput: corporaci\u00f3n\n\nInput: capacity\nOutput: capacidad\n\nInput: filter\nOutput: filtro\n\nInput: protection\nOutput: protecci\u00f3n\n\nInput: recall\nOutput: retirada\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: corporation\nOutput: corporaci\u00f3n\n\nInput: capacity\nOutput: capacidad\n\nInput: filter\nOutput: filtro\n\nInput: protection\nOutput: protecci\u00f3n\n\nInput: recall\nOutput: retirada"
+      }
+    },
+    "100": {
+      "input": "I gave a friend an instruction and five inputs. The friend read the instruction and wrote an output for every one of the inputs.\nHere are the input-output pairs:\n\nInput: depression\nOutput: depresi\u00f3n\n\nInput: text\nOutput: texto\n\nInput: space\nOutput: espacio\n\nInput: reform\nOutput: reforma\n\nInput: scouting\nOutput: escultismo\n\nThe instruction was",
+      "metadata": {
+        "examples_seen": "Input: depression\nOutput: depresi\u00f3n\n\nInput: text\nOutput: texto\n\nInput: space\nOutput: espacio\n\nInput: reform\nOutput: reforma\n\nInput: scouting\nOutput: escultismo"
+      }
+    }
+  },
+  "Definition": [
+    "Translate the word to Spanish"
+  ]
+}

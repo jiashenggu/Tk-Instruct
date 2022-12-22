@@ -12,7 +12,7 @@ nohup python src/run_s2s.py \
     --do_eval \
     --predict_with_generate \
     --evaluation_strategy "no" \
-    --model_name_or_path allenai/tk-instruct-3b-def-pos \
+    --model_name_or_path google/t5-efficient-tiny \
     --max_source_length 1024 \
     --max_target_length 128 \
     --generation_max_length 128 \

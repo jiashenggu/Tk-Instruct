@@ -33,4 +33,5 @@ nohup python src/run_s2s_perturb.py \
     --overwrite_cache \
     --per_device_eval_batch_size 4 \
     --perturb_method delete_stopwords \
+    --seed 1 \
     > tk_eval_log/eval_xlingual_$EXP_NAME.out 2>&1 &

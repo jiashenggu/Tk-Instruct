@@ -1,0 +1,6 @@
+共三个任务
+第一个任务是对任务定义进行干扰，改变scripts/eval_tk_instruct_english_perturb.sh和scripts/eval_tk_instruct_xlingual_perturb.sh中的perturb_method参数并运行来进行干扰实验。具体的干扰方法在src/ni_dataset_perturb.py。为了保证复现性每个干扰方法跑三次，分别设定seed为1，2，3。
+
+第二个任务是在induction_data上进行实验，将scripts/eval_tk_instruct_english_orignal.sh和scripts/eval_tk_instruct_xlingual_orignal.sh中的运行文件改为/home/gujiashe/Tk-Instruct/src/run_s2s_induction.py，然后运行。
+
+第三个任务是在新写的定义上进行实验，将tmp/new_instruction.ipynb中输出的内容替换data/splits/default/dev_tasks.txt，由后缀的为新写的，无后缀为原来的，分别做一次实验进行对比。

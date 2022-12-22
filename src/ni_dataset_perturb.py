@@ -152,7 +152,7 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
     def _generate_examples(self, path=None, task_dir=None, max_num_instances_per_task=None, subset=None, perturb_method=None):
         """Yields examples."""
         logger.info(f"Generating tasks from = {path}")
-        perturb = DataAugmentation()
+        perturb = DataPerturbation()
         # with open(path, encoding="utf-8") as split_f:
         split_f = open(path, encoding="utf-8").readlines()
         task_ids_other = list(range(0, len(split_f)))
@@ -217,7 +217,7 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                     example["Instance"] = instance
                     yield f"{task_name}_{idx}", example
 
-class DataAugmentation:
+class DataPerturbation:
     def __init__(self):
         self.tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased')
         self.model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')

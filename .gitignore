@@ -3,10 +3,9 @@ cache
 output*
 *.out
 wandb
-induction_data
 
 # data
-data/
+data
 beaker_configs/ni_*.yaml
 backup/
 
