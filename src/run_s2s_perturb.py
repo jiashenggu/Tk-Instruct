@@ -311,7 +311,7 @@ def main():
 
     # Get the NaturalInstructions dataset
     raw_datasets = load_dataset(
-        "src/ni_dataset_crud.py", 
+        "src/ni_dataset_perturb.py", 
         data_dir=data_args.data_dir, 
         task_dir=data_args.task_dir, 
         cache_dir=model_args.cache_dir,
