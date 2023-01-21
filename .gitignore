@@ -4,6 +4,9 @@ output*
 *.out
 wandb
 
+*.zip
+induction_data
+
 # data
 data
 beaker_configs/ni_*.yaml

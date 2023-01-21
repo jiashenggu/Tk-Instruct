@@ -2,7 +2,7 @@
 set -x
 
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
-# export TRANSFORMERS_CACHE=/home/gujiashe/.cache/huggingface
+
 # export WANDB_DISABLED="true"
 export CUDA_LAUNCH_BLOCKING=1
 export NCCL_P2P_DISABLE=1

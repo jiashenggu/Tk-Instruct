@@ -217,6 +217,12 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                     example["Instance"] = instance
                     yield f"{task_name}_{idx}", example
 
+import pandas as pd
+import numpy as np
+import json
+import random
+import spacy
+from transformers import BertTokenizer, BertForMaskedLM
 class DataPerturbation:
     def __init__(self):
         self.tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased')
@@ -234,7 +240,7 @@ class DataPerturbation:
         return connected_tokens
 
 
-    def delete_words(self, Definition, num=5):
+    def delete_words(self, Definition, num=10):
 
         tokens = self.tokenizer.tokenize(Definition)
         tokens = self.connect_token_segments(tokens)
@@ -261,7 +267,7 @@ class DataPerturbation:
         Definition_perturb =  self.tokenizer.convert_tokens_to_string(deleted_tokens)
         return Definition_perturb
 
-    def insert_words(self, Definition, num_mask=5):
+    def insert_words(self, Definition, num_mask=10):
 
         tokens = self.tokenizer.tokenize(Definition)
         if len(tokens)>512:
@@ -292,7 +298,7 @@ class DataPerturbation:
 
         return self.tokenizer.decode(input_ids, skip_special_tokens=True)
 
-    def replace_words(self, Definition, num_mask=5):
+    def replace_words(self, Definition, num_mask=10):
 
         tokens = self.tokenizer.tokenize(Definition)
         if len(tokens)>512:
